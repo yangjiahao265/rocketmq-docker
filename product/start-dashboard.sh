@@ -17,4 +17,4 @@
 
 ROCKETMQ_DASHBOARD_VERSION=$1
 
-docker run -d -it --name rocketmq-dashboard -p 6765:8080 apache/rocketmq-dashboard:${ROCKETMQ_DASHBOARD_VERSION}-centos
+docker run -d -it --name rocketmq-dashboard -e "NAMESRV_ADDR=172.17.0.2:9876" -p 6765:8080 apache/rocketmq-dashboard:${ROCKETMQ_DASHBOARD_VERSION}-centos
