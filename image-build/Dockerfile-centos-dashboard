@@ -49,14 +49,14 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref && \
     ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
     
 ### make it faster if remove those "#"s bellow
-# RUN sed -i '159i \
-#     <mirror> \
-#       <id>nexus-tencentyun</id> \
-#       <mirrorOf>*</mirrorOf> \
-#       <name>Nexus tencentyun</name> \
-#       <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url> \
-#     </mirror> \
-# ' /usr/share/maven/conf/settings.xml
+RUN sed -i '159i \
+    <mirror> \
+      <id>nexus-tencentyun</id> \
+      <mirrorOf>*</mirrorOf> \
+      <name>Nexus tencentyun</name> \
+      <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url> \
+    </mirror> \
+' /usr/share/maven/conf/settings.xml
 
 RUN cat /usr/share/maven/conf/settings.xml
 
